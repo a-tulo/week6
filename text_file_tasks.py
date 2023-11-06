@@ -44,6 +44,28 @@ def run_task3():
 def run():
     print("Processsing...")
     cwd()
+def search_books(path):
+    print("Searching...")
+    sections = ""
+    books = "Books:\n"
+    with open(path) as file:
+        for line in file:
+            if line.startswith("Section"):
+                sections += line
+            else:
+                books += line
+
+    return f"{sections}\n\n{books}"
+
+def save(path, data):
+    print("Saving...")
+    with open(path, "w") as file:
+        file.write(data)
+    print("Done!")
+
+def run_task4():
+    data = search_books("books.txt")
+    save("section-books.txt",data)
 
 if __name__ == "__main__":
-    run_task3()
+    run_task4()
