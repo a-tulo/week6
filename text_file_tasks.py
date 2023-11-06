@@ -32,9 +32,18 @@ def run_task2():
     print()
     display_text(path)
 
+def search(path):
+    print("Searching...")
+    with open(path) as file:
+        for line in file:
+            print(f"Looked in {line.strip()}")
+    print("Done!")
+
+def run_task3():
+    search("library.txt")
 def run():
     print("Processsing...")
     cwd()
 
 if __name__ == "__main__":
-    run_task2()
+    run_task3()
